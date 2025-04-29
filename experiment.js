@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>My jsPsych Experiment</title>
-  <script src="https://unpkg.com/jspsych@7.3.0/jspsych.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-html-button-response.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-html-slider-response.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-call-function.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-survey-text.js"></script>
-  <link href="https://unpkg.com/jspsych@7.3.0/css/jspsych.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-    }
-  </style>
-</head>
-<body>
-  <script src="experiment.js"></script>
-</body>
-</html>
-// ───────────────────────────────────────────────────────
+
 // A) Initialize jsPsych
 const jsPsych = initJsPsych({
   on_finish: () => jsPsych.data.get().localSave('csv', 'data.csv')
