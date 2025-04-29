@@ -4,18 +4,26 @@
   <meta charset="UTF-8" />
   <title>My jsPsych Experiment</title>
 
-  <!-- jsPsych core library -->
-  <script src="https://unpkg.com/jspsych@7.3.0/jspsych.js"></script>
+  <!-- 加载 jsPsych 7 的主模块作为 ES module -->
+  <script type="module">
+    import { initJsPsych } from "https://unpkg.com/jspsych@7.3.0/es6/jspsych.js";
+    import jsPsychHtmlButtonResponse from "https://unpkg.com/jspsych@7.3.0/es6/plugins/jspsych-html-button-response.js";
+    import jsPsychHtmlSliderResponse from "https://unpkg.com/jspsych@7.3.0/es6/plugins/jspsych-html-slider-response.js";
+    import jsPsychCallFunction from "https://unpkg.com/jspsych@7.3.0/es6/plugins/jspsych-call-function.js";
+    import jsPsychSurveyText from "https://unpkg.com/jspsych@7.3.0/es6/plugins/jspsych-survey-text.js";
 
-  <!-- jsPsych plugins -->
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-html-button-response.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-html-slider-response.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-call-function.js"></script>
-  <script src="https://unpkg.com/jspsych@7.3.0/plugins/jspsych-survey-text.js"></script>
+    import { jsPsych } from "./experiment.js";
 
-  <!-- jsPsych CSS -->
+    // 启动实验
+    jsPsych(initJsPsych, {
+      jsPsychHtmlButtonResponse,
+      jsPsychHtmlSliderResponse,
+      jsPsychCallFunction,
+      jsPsychSurveyText
+    });
+  </script>
+
   <link href="https://unpkg.com/jspsych@7.3.0/css/jspsych.css" rel="stylesheet" />
-
   <style>
     body {
       background-color: black;
@@ -25,6 +33,5 @@
   </style>
 </head>
 <body>
-  <script src="experiment.js"></script>
 </body>
 </html>
